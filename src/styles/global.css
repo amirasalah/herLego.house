@@ -5,7 +5,6 @@
 
 :root {
 	--accent: #2337ff;
-	--pink: #ff2d55;
 	--accent-dark: #000d8a;
 	--black: 15, 18, 25;
 	--gray: 96, 115, 159;
@@ -102,6 +101,10 @@ img {
   animation: revealOnScroll 1s;
   animation-timeline: view();
 }
+.scale-section {
+  animation: scaleOnScroll 1s;
+  animation-timeline: view();
+}
 
 @keyframes revealOnScroll {
   0% {
@@ -111,5 +114,16 @@ img {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes scaleOnScroll {
+	  0% {
+	opacity: 0;
+	transform: scale(0.5);
+  }
+  100% {
+	opacity: 1;
+	transform: scale(2);
   }
 }
