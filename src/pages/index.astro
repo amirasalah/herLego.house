@@ -61,31 +61,35 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		</script>
 	</head>
 	<body>
-		<main>
-			<img src='/legos.jpeg' />
-			<h4>A jaw dropping house is being built right now</h4>
-			<h5>It's going to be amazing!</h5>
-			<h6>Stay tuned for updates</h6>
-			<span>
-				But in the meantime, you can still contact the builder by sending
-				<a target='_blank' href='mailto:amira.salah.rahim@gmail.com'>an email</a>
-			</span>
-			<span>or a message on <a target='_blank' href='https://www.linkedin.com/in/amerasalah/'>Linkedin</a></span>
-			<span>
-				<a target='_blank' href='https://github.com/amirasalah12'>Github</a> is also an option if you're nerdy like
-				that.
-			</span>
+		<main class='flex flex-col items-center'>
+			<section class='flex flex-col items-center h-screen justify-center'>
+				<img src='/legos.jpeg' />
+				<h4>A jaw dropping house is being built right now</h4>
+			</section>
+			<section class='h-40'>
+				<h5>It's going to be amazing!</h5>
+			</section>
+			<section class='h-40'>
+				<h6>Stay tuned for updates</h6>
+			</section>
+			<section class='h-40'>
+				<span>
+					But in the meantime, you can still contact the builder by sending
+					<a target='_blank' href='mailto:amira.salah.rahim@gmail.com'>an email</a>
+				</span>
+			</section>
+			<section class='h-40'>
+				<span>
+					or a message on
+					<a target='_blank' href='https://www.linkedin.com/in/amerasalah/'>Linkedin</a>
+				</span>
+			</section>
+			<section class='h-40'>
+				<span>
+					<a target='_blank' href='https://github.com/amirasalah12'>Github</a> is also an option if you're nerdy
+					like that.
+				</span>
+			</section>
 		</main>
-		<style>
-			main {
-				display: grid;
-				place-items: center;
-				text-align: center;
-			}
-			a {
-				color: var(--pink);
-				text-decoration: none;
-			}
-		</style>
 	</body>
 </html>
