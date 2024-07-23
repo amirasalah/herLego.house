@@ -1,5 +1,6 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
@@ -61,15 +62,16 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	</head>
 	<body>
 		<main class='flex flex-col items-center'>
+			<Header />
 			<section class='flex flex-col items-center h-screen justify-center'>
 				<img src='/legos.jpeg' />
 				<h4>A jaw dropping house is being built right now</h4>
 			</section>
 			<section class='h-72 reveal-section'>
-				<h5>It's going to be amazing!</h5>
+				<h5>It's going to be AMAZING!</h5>
 			</section>
 			<section class='h-72 reveal-section'>
-				<h6>Stay tuned for updates</h6>
+				<h6>Stay tuned for updates...</h6>
 			</section>
 			<section class='h-72 reveal-section'>
 				<span>
