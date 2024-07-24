@@ -1,7 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 :root {
 	--accent: #2337ff;
@@ -101,13 +98,10 @@ img {
   animation: revealOnScroll 1s;
   animation-timeline: view();
 }
-.scale-section {
-  animation: scaleOnScroll 1s;
-  animation-timeline: view();
-}
+
 
 @keyframes revealOnScroll {
-  0% {
+	0% {
     opacity: 0;
     transform: translateY(20px);
   }
@@ -117,13 +111,3 @@ img {
   }
 }
 
-@keyframes scaleOnScroll {
-	  0% {
-	opacity: 0;
-	transform: scale(0.5);
-  }
-  100% {
-	opacity: 1;
-	transform: scale(2);
-  }
-}
