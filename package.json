@@ -23,6 +23,8 @@
   },
   "packageManager": "pnpm@9.1.4+sha1.2432063d815cfa88fd9fef1d85a445e3f609851d",
   "devDependencies": {
+    "@playwright/test": "^1.45.3",
+    "@types/node": "^20.14.12",
     "playwright": "^1.45.3",
     "vitest": "^2.0.4"
   }
