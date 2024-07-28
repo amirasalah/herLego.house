@@ -4,7 +4,8 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				'primary-pink': '#db2777',
+				'salmon': '#ff9999',
+				
 			}
 		},
 	},
