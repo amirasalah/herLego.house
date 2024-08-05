@@ -4,8 +4,9 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				'salmon': '#ff9999',
+				salmon: '#ff9999',
 				'accent-light': '#f5ff',
+				accent: '#2337ff',
 				'accent-dark': '#000d8a',
 			}, 
 			fontFamily: {
