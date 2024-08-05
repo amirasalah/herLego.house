@@ -1,0 +1,35 @@
+---
+const baseURL = 'http://api.weatherapi.com/v1/current.json?key=f231b963d90d4620be781716240508';
+
+const myCities = {
+	cairo: 'Cairo',
+	berlin: 'Berlin',
+};
+
+const cairoResponse = await fetch(`${baseURL}&q=${myCities.cairo}&aqi=no`);
+const berlinResponse = await fetch(`${baseURL}&q=${myCities.berlin}&aqi=no`);
+
+const cairoData = await cairoResponse.json();
+const berlinData = await berlinResponse.json();
+---
+
+<section class='grid grid-cols-2 gap-2'>
+	<p class='flex items-center'>
+		{myCities.cairo}: {cairoData?.current.temp_c} °C
+		<img
+			width='30px'
+			height='30px'
+			src={cairoData?.current.condition.icon}
+			alt={cairoData?.current.condition.text}
+		/>
+	</p>
+	<p class='flex items-center'>
+		{myCities.berlin}: {berlinData?.current.temp_c} °C
+		<img
+			width='30px'
+			height='30px'
+			src={berlinData?.current.condition.icon}
+			alt={berlinData?.current.condition.text}
+		/>
+	</p>
+</section>

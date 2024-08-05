@@ -1,5 +1,9 @@
-<footer class='py-3 text-sm w-screen border-t-black border-2 grid place-items-center'>
-	<nav>
+---
+import CityWeather from './CityWeather.astro';
+---
+
+<footer class='py-3 text-sm w-screen border-t-black border-2 grid grid-cols-2'>
+	<nav class='grid place-items-center'>
 		<ul class='gap-5 flex'>
 			<li>
 				<a target='_blank' href='https://www.linkedin.com/in/amerasalah/'>Linkedin</a>
@@ -11,6 +15,10 @@
 				<a target='_blank' href='mailto:amira.salah.rahim@gmail.com'>Email</a>
 			</li>
 		</ul>
+		<p>© {new Date().getFullYear()}</p>
 	</nav>
-	<p>{new Date().getFullYear()}</p>
+	<section class='grid place-items-center'>
+		<p>Designed and developed by Amira Salah</p>
+		<CityWeather />
+	</section>
 </footer>
