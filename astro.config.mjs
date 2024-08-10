@@ -10,5 +10,9 @@ export default defineConfig({
   site: 'https://herlego.house/',
   integrations: [mdx(), sitemap(), tailwind()],
   output: "server",
-  adapter: vercel()
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+  })
 }); 
