@@ -6,7 +6,7 @@ test.beforeEach(async ({ page }) => {
 
 test.describe('Her lego house home', () => {
     test('has header', async ({ page }) => {
-      const header = await page.locator('header');
+      const header = page.locator('header');
       await header.isVisible();
     });
 });
