@@ -24,7 +24,7 @@
     "typescript": "^5.5.4"
   },
   "engines": {
-    "node": "20.x"
+    "node": "18.x"
   },
   "packageManager": "pnpm@9.1.4+sha1.2432063d815cfa88fd9fef1d85a445e3f609851d",
   "devDependencies": {
