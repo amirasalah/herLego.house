@@ -11,6 +11,7 @@ export default defineConfig({
   integrations: [mdx(), sitemap(), tailwind()],
   output: "server",
   adapter: vercel({
+    runtime: "node",
     webAnalytics: {
       enabled: true,
     },
