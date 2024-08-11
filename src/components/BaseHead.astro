@@ -27,7 +27,7 @@ const { title, description } = Astro.props;
 <title>{title}</title>
 <meta name='title' content={title} />
 <meta name='description' content={description} />
-<script type='text/javascript' is:inline>
+<script type='text/javascript'>
 	(window.heapReadyCb = window.heapReadyCb || []),
 		(window.heap = window.heap || []),
 		(heap.load = function (e, t) {
@@ -79,4 +79,3 @@ const { title, description } = Astro.props;
 		});
 	heap.load('4172365793');
 </script>
-
