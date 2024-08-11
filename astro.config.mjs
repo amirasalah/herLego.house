@@ -9,10 +9,6 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: 'https://herlego.house/',
   integrations: [mdx(), sitemap(), tailwind()],
-  output: "server",
-  adapter: vercel({
-    webAnalytics: {
-      enabled: true,
-    },
-  })
+  // output: "server",
+  // adapter: vercel()
 }); 
