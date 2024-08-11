@@ -3,5 +3,16 @@
         "api/*.js": {
             "runtime": "nodejs18.x"
         }
-    }
+    },
+    "headers": [
+        {
+            "source": "/(.*)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "no-store"
+                }
+            ]
+        }
+    ]
 }
