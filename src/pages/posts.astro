@@ -22,10 +22,17 @@ const posts = await sanityClient.fetch(`*[_type == "blog"]`);
 		<main class='container mx-auto' transition:animate={fade({ duration: 1000 })}>
 			<section class='grid lg:grid-rows-3'>
 				<h1
-					class='text-accent my-3 lg:my-7 lg:leading-normal leading-tight font-extrabold text-4xl lg:text-5xl underline'
+					class='text-accent
+					my-3
+					lg:my-7
+					lg:leading-normal
+					leading-tight
+					font-extrabold
+					text-4xl
+					lg:text-5xl
+					underline'
 				>
-					La<span class='text-salmon'>t</span>es<span class='text-salmon'>t</span>
-					<span class='text-salmon'>t</span>hough<span class='text-salmon'>t</span>s💡
+					Latest thoughts💡
 				</h1>
 				<p class='my-3 lg:my-7'>
 					<span>
