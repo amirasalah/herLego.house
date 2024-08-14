@@ -1,79 +1,64 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import { ViewTransitions, fade } from 'astro:transitions';
+import Layout from '../layouts/Layout.astro';
 
 export const prerender = true;
 ---
 
-<html lang='en'>
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<ViewTransitions />
-	</head>
-	<body class='font-Montserrat grid grid-rows-10 h-screen'>
-		<Header />
-		<main class='container px-4 mx-auto row-span-8' transition:animate={fade({ duration: 1000 })}>
-			<h1 class='font-extrabold my-7 lg:text-4xl text-2xl'>Have a cool project in mind?</h1>
-			<h2 class='font-extrabold leading-10 lg:text-5xl text-3xl text-accent'>
-				Reach <span class='lg:text-6xl text-4xl tracking-widest'>OUT</span>!
-			</h2>
-			<form method='POST' id='emailForm' class='grid my-5'>
-				<input
-					placeholder='Name'
-					class='border-2 p-3 my-3 rounded-md outline-0 border-solid border-salmon text-gray-900 placeholder:text-gray-400'
-					type='text'
-					id='name'
-					autofocus
-					name='name'
-					required
-				/>
-				<input
-					type='email'
-					class='border-2 my-3 p-3 rounded-md outline-0 border-solid border-salmon text-gray-900 placeholder:text-gray-400'
-					placeholder='Email'
-					id='email'
-					name='email'
-					required
-				/>
-				<textarea
-					class='border-2 my-3 p-3 rounded-md outline-0 border-solid border-salmon text-gray-900 placeholder:text-gray-400'
-					placeholder='Message'
-					id='message'
-					name='message'
-					required></textarea>
-				<button class='my-8 tracking-widest rounded-md py-4 font-extrabold bg-salmon text-accent' type='submit'
-					>SEND</button
-				>
-			</form>
-		</main>
+<Layout>
+	<h1 class='font-extrabold my-7 lg:text-4xl text-2xl'>Have a cool project in mind?</h1>
+	<h2 class='font-extrabold leading-10 lg:text-5xl text-3xl text-accent'>
+		Reach <span class='lg:text-6xl text-4xl tracking-widest'>OUT</span>!
+	</h2>
+	<form method='POST' id='emailForm' class='grid my-5'>
+		<input
+			placeholder='Name'
+			class='border-2 p-3 my-3 rounded-md outline-0 border-solid border-salmon text-gray-900 placeholder:text-gray-400'
+			type='text'
+			id='name'
+			autofocus
+			name='name'
+			required
+		/>
+		<input
+			type='email'
+			class='border-2 my-3 p-3 rounded-md outline-0 border-solid border-salmon text-gray-900 placeholder:text-gray-400'
+			placeholder='Email'
+			id='email'
+			name='email'
+			required
+		/>
+		<textarea
+			class='border-2 my-3 p-3 rounded-md outline-0 border-solid border-salmon text-gray-900 placeholder:text-gray-400'
+			placeholder='Message'
+			id='message'
+			name='message'
+			required></textarea>
+		<button class='my-8 tracking-widest rounded-md py-4 font-extrabold bg-salmon text-accent' type='submit'
+			>SEND</button
+		>
+	</form>
+</Layout>
+<script>
+	import { sendForm, init } from '@emailjs/browser';
 
-		<Footer />
-		<script>
-			import { sendForm, init } from '@emailjs/browser';
+	init({ publicKey: '-LhOJHmCRayVEDvag' });
 
-			init({ publicKey: '-LhOJHmCRayVEDvag' });
+	document?.getElementById('emailForm')?.addEventListener('submit', async function (event) {
+		event.preventDefault();
 
-			document?.getElementById('emailForm')?.addEventListener('submit', async function (event) {
-				event.preventDefault();
+		try {
+			// Fetch the FormData from the form
+			const form = event.target as HTMLFormElement;
 
-				try {
-					// Fetch the FormData from the form
-					const form = event.target as HTMLFormElement;
-
-					sendForm('service_k5pniae', 'template_w1i7i68', form)
-						.then(response => {
-							console.log('SUCCESS!', response.status, response.text);
-						})
-						.catch(error => {
-							console.error('Error:', error);
-						});
-				} catch (error) {
-					console.error('Error:', (error as Error).message);
-				}
-			});
-		</script>
-	</body>
-</html>
+			sendForm('service_k5pniae', 'template_w1i7i68', form)
+				.then(response => {
+					console.log('SUCCESS!', response.status, response.text);
+				})
+				.catch(error => {
+					console.error('Error:', error);
+				});
+		} catch (error) {
+			console.error('Error:', (error as Error).message);
+		}
+	});
+</script>
