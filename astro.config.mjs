@@ -11,7 +11,7 @@ export default defineConfig({
   integrations: [tailwind(), sanity({
     projectId: "awebz0v4",
     dataset: "production",
-    useCdn: false,
+    useCdn: true,
     studioBasePath: "/studio"
   }), react()],
   output: "server",
