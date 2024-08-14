@@ -10,6 +10,8 @@ import { ViewTransitions, fade } from 'astro:transitions';
 // get all posts from sanity
 
 const posts = await sanityClient.fetch(`*[_type == "blog"]`);
+
+export const prerender = true;
 ---
 
 <html lang='en'>
