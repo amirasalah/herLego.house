@@ -25,9 +25,9 @@ const { data: post } = await loadQuery<SanityDocument>({
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<ViewTransitions />
 	</head>
-	<body class='font-Montserrat'>
+	<body class='font-Montserrat grid grid-rows-10 h-screen'>
 		<Header />
-		<main class='container mx-auto grid grid-rows-3' transition:animate={fade({ duration: 1000 })}>
+		<main class='container mx-auto row-span-8' transition:animate={fade({ duration: 1000 })}>
 			<section class='row-span-3'>
 				<h1><strong>{post.title}</strong></h1>
 				<article>{post.body}</article>
