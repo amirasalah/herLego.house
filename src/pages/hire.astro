@@ -14,9 +14,9 @@ import { ViewTransitions, fade } from 'astro:transitions';
 	<body class='font-Montserrat grid grid-rows-10 h-screen'>
 		<Header />
 		<main class='container px-4 mx-auto row-span-8' transition:animate={fade({ duration: 1000 })}>
-			<h1 class='font-extrabold my-7 text-4xl'>Have a cool project in mind?</h1>
-			<h2 class='font-extrabold leading-10 text-5xl text-accent'>
-				Reach <span class='text-6xl tracking-widest'>OUT</span>!
+			<h1 class='font-extrabold my-7 lg:text-4xl text-2xl'>Have a cool project in mind?</h1>
+			<h2 class='font-extrabold leading-10 lg:text-5xl text-3xl text-accent'>
+				Reach <span class='lg:text-6xl text-4xl tracking-widest'>OUT</span>!
 			</h2>
 			<form method='POST' id='emailForm' class='grid my-5'>
 				<input
