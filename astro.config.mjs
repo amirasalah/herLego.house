@@ -3,6 +3,8 @@ import tailwind from "@astrojs/tailwind";
 import sanity from "@sanity/astro";
 import react from "@astrojs/react";
 
+import vercel from "@astrojs/vercel/serverless";
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://herlego.house/',
@@ -11,5 +13,7 @@ export default defineConfig({
     dataset: "production",
     useCdn: false,
     studioBasePath: "/studio"
-  }), react()]
+  }), react()],
+  output: "server",
+  adapter: vercel()
 });
