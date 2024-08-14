@@ -4,9 +4,9 @@ import CityWeather from './CityWeather.astro';
 
 <footer class='py-3 text-sm w-screen border-t-black row-span-1 border-2'>
 	<section class='container px-4 mx-auto'>
-		<section class='lg:grid grid-cols-2'>
-			<nav class='grid'>
-				<ul class='gap-5 flex'>
+		<section class='grid lg:grid-cols-2 grid-cols-1'>
+			<nav class='flex lg:flex-col lg:items-start justify-center flex-row gap-3'>
+				<ul class='gap-5 justify-center flex'>
 					<li>
 						<a target='_blank' href='https://www.linkedin.com/in/amerasalah/'>Linkedin</a>
 					</li>
@@ -19,7 +19,9 @@ import CityWeather from './CityWeather.astro';
 				</ul>
 				<p>© {new Date().getFullYear()}</p>
 			</nav>
-			<section class='grid place-items-end'>
+			<section
+				class='flex lg:items-end justify-center lg:text-sm text-xs items-center gap-2 lg:flex-col flex-row'
+			>
 				<p>Designed and developed by Amira Salah</p>
 				<CityWeather />
 			</section>
