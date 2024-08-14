@@ -20,26 +20,27 @@ const posts = await sanityClient.fetch(`*[_type == "blog"]`);
 	<body class='font-Montserrat'>
 		<Header />
 		<main class='container mx-auto' transition:animate={fade({ duration: 1000 })}>
-			<h1>Latest thoughts:</h1>
-			<span>
-				This is a space for unfilted thoughts, ideas, and reflections. some of them are personal, others are
-				professional, but mostly they're just a way to express how i process the world. 
-                I don't have and likes or comments here on purpose, these thoughts are not a way to get validation or grab attention, they're
-				just my way to articulate my thoughts and learn from them.
-			</span>
-			<ul class='grid grid-cols-2'>
-				{
-					posts.map((post: SanityDocument) => (
-						<li class='border-black border-2 p-5'>
-							<a class='w-auto h-auto block' href={`post/${post.slug.current}`}>
-								{post.title}
-							</a>
-						</li>
-					))
-				}
-			</ul>
+			<section class='grid grid-rows-3'>
+				<h1 class='text-accent my-7 font-extrabold text-5xl underline'>Latest thoughts💡</h1>
+				<p class='my-7'>
+					This is a space for unfilted thoughts, ideas, and reflections. some of them are personal, others are
+					professional, but mostly they're just a way to express how i process the world. I don't have and
+					likes or comments here on purpose, these thoughts are not a way to get validation or grab attention,
+					they're just my way to articulate my thoughts and learn from them.
+				</p>
+				<ul class='grid grid-cols-3 my-7'>
+					{
+						posts.map((post: SanityDocument) => (
+							<li class='border-black border-2 p-5 flex items-center justify-center cursor-pointer hover:bg-salmon transition-all'>
+								<a class='w-auto h-auto block text-4xl' href={`post/${post.slug.current}`}>
+									{post.title}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</section>
 		</main>
-
 		<Footer />
 	</body>
 </html>
