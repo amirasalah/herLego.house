@@ -16,6 +16,6 @@ import { ViewTransitions, fade } from 'astro:transitions';
 		<main class='container px-4 mx-auto row-span-8' transition:animate={fade()}>
 			<slot />
 		</main>
-		<Footer client:load />
+		<Footer />
 	</body>
 </html>

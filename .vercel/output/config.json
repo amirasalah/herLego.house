@@ -16,15 +16,11 @@
 			"dest": "_render"
 		},
 		{
-			"src": "^\\/hire\\/?$",
+			"src": "^\\/studio(?:\\/(.*?))?\\/?$",
 			"dest": "_render"
 		},
 		{
-			"src": "^\\/rss\\.xml\\/?$",
-			"dest": "_render"
-		},
-		{
-			"src": "^\\/$",
+			"src": "^\\/post\\/([^/]+?)\\/?$",
 			"dest": "_render"
 		}
 	]
