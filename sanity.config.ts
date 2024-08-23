@@ -4,8 +4,8 @@ import { structureTool } from "sanity/structure";
 import { blogType } from "./sanity/schemaTypes/blog";
 
 export default defineConfig({
-    projectId: import.meta.env.PUBLIC_SANITY_PROJECT_ID,
-    dataset: import.meta.env.PUBLIC_SANITY_DATASET,
+    projectId: "awebz0v4",
+    dataset: "production",
     plugins: [structureTool()],
     schema: {
         types: [blogType]
