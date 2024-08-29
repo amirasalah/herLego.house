@@ -1,30 +1,36 @@
 ---
-import CityWeather from './CityWeather.astro';
+import CityWeather from "./CityWeather.astro";
 ---
 
-<footer class='py-3 text-sm w-screen border-t-black row-span-1 border-2'>
-	<section class='container px-4 mx-auto'>
-		<section class='grid lg:grid-cols-2 grid-cols-1'>
-			<nav class='flex lg:flex-col lg:items-start justify-center flex-row gap-3'>
-				<ul class='gap-5 justify-center flex'>
-					<li>
-						<a target='_blank' href='https://www.linkedin.com/in/amerasalah/'>Linkedin</a>
-					</li>
-					<li>
-						<a target='_blank' href='https://github.com/amirasalah12'>Github</a>
-					</li>
-					<li>
-						<a target='_blank' href='https://www.instagram.com/amiraasalah/'>Instgram</a>
-					</li>
-				</ul>
-				<p>© {new Date().getFullYear()}</p>
-			</nav>
-			<section
-				class='flex lg:items-end justify-center lg:text-sm text-xs items-center gap-2 lg:flex-col flex-row'
-			>
-				<p>Designed and developed by Amira Salah</p>
-				<CityWeather />
-			</section>
-		</section>
-	</section>
+<footer class="row-span-1 w-screen border-2 border-t-black py-3 text-sm">
+  <section class="container mx-auto px-4">
+    <section class="grid grid-cols-1 lg:grid-cols-2">
+      <nav
+        class="flex flex-row justify-center gap-3 lg:flex-col lg:items-start"
+      >
+        <ul class="flex justify-center gap-5">
+          <li>
+            <a target="_blank" href="https://www.linkedin.com/in/amerasalah/"
+              >Linkedin</a
+            >
+          </li>
+          <li>
+            <a target="_blank" href="https://github.com/amirasalah12">Github</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://www.instagram.com/amiraasalah/"
+              >Instgram</a
+            >
+          </li>
+        </ul>
+        <p>© {new Date().getFullYear()}</p>
+      </nav>
+      <section
+        class="flex flex-row items-center justify-center gap-2 text-xs lg:flex-col lg:items-end lg:text-sm"
+      >
+        <p>Designed and developed by Amira Salah</p>
+        <CityWeather />
+      </section>
+    </section>
+  </section>
 </footer>

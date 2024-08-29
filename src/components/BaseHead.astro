@@ -1,12 +1,12 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
-import '../styles/global.css';
+import "../styles/global.css";
 
 interface Props {
-	title: string;
-	description: string;
-	image?: string;
+  title: string;
+  description: string;
+  image?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -15,67 +15,67 @@ const { title, description } = Astro.props;
 ---
 
 <!-- Global Metadata -->
-<meta charset='utf-8' />
-<meta name='viewport' content='width=device-width,initial-scale=1' />
-<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-<meta name='generator' content={Astro.generator} />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="generator" content={Astro.generator} />
 
 <!-- Canonical URL -->
-<link rel='canonical' href={canonicalURL} />
+<link rel="canonical" href={canonicalURL} />
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
-<meta name='title' content={title} />
-<meta name='description' content={description} />
-<script type='text/javascript'>
-	(window.heapReadyCb = window.heapReadyCb || []),
-		(window.heap = window.heap || []),
-		(heap.load = function (e, t) {
-			(window.heap.envId = e),
-				(window.heap.clientConfig = t = t || {}),
-				(window.heap.clientConfig.shouldFetchServerConfig = !1);
-			var a = document.createElement('script');
-			(a.type = 'text/javascript'),
-				(a.async = !0),
-				(a.src = 'https://cdn.us.heap-api.com/config/' + e + '/heap_config.js');
-			var r = document.getElementsByTagName('script')[0];
-			r.parentNode.insertBefore(a, r);
-			var n = [
-					'init',
-					'startTracking',
-					'stopTracking',
-					'track',
-					'resetIdentity',
-					'identify',
-					'getSessionId',
-					'getUserId',
-					'getIdentity',
-					'addUserProperties',
-					'addEventProperties',
-					'removeEventProperty',
-					'clearEventProperties',
-					'addAccountProperties',
-					'addAdapter',
-					'addTransformer',
-					'addTransformerFn',
-					'onReady',
-					'addPageviewProperties',
-					'removePageviewProperty',
-					'clearPageviewProperties',
-					'trackPageview',
-				],
-				i = function (e) {
-					return function () {
-						var t = Array.prototype.slice.call(arguments, 0);
-						window.heapReadyCb.push({
-							name: e,
-							fn: function () {
-								heap[e] && heap[e].apply(heap, t);
-							},
-						});
-					};
-				};
-			for (var p = 0; p < n.length; p++) heap[n[p]] = i(n[p]);
-		});
-	heap.load('4172365793');
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<script type="text/javascript">
+  (window.heapReadyCb = window.heapReadyCb || []),
+    (window.heap = window.heap || []),
+    (heap.load = function (e, t) {
+      (window.heap.envId = e),
+        (window.heap.clientConfig = t = t || {}),
+        (window.heap.clientConfig.shouldFetchServerConfig = !1);
+      var a = document.createElement("script");
+      (a.type = "text/javascript"),
+        (a.async = !0),
+        (a.src = "https://cdn.us.heap-api.com/config/" + e + "/heap_config.js");
+      var r = document.getElementsByTagName("script")[0];
+      r.parentNode.insertBefore(a, r);
+      var n = [
+          "init",
+          "startTracking",
+          "stopTracking",
+          "track",
+          "resetIdentity",
+          "identify",
+          "getSessionId",
+          "getUserId",
+          "getIdentity",
+          "addUserProperties",
+          "addEventProperties",
+          "removeEventProperty",
+          "clearEventProperties",
+          "addAccountProperties",
+          "addAdapter",
+          "addTransformer",
+          "addTransformerFn",
+          "onReady",
+          "addPageviewProperties",
+          "removePageviewProperty",
+          "clearPageviewProperties",
+          "trackPageview"
+        ],
+        i = function (e) {
+          return function () {
+            var t = Array.prototype.slice.call(arguments, 0);
+            window.heapReadyCb.push({
+              name: e,
+              fn: function () {
+                heap[e] && heap[e].apply(heap, t);
+              }
+            });
+          };
+        };
+      for (var p = 0; p < n.length; p++) heap[n[p]] = i(n[p]);
+    });
+  heap.load("4172365793");
 </script>
