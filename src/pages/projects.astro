@@ -1,0 +1,49 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const url = `https://api.github.com/users/amirasalah/repos`;
+let repos = [];
+
+try {
+  const response = await fetch(url);
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch repositories");
+  }
+
+  repos = await response.json();
+  console.log(repos);
+} catch (error) {
+  console.error("Error fetching repositories:", error);
+}
+---
+
+<Layout>
+  <section class="grid h-full overflow-scroll">
+    <h1
+      class="my-3 text-4xl font-extrabold leading-tight text-accent underline lg:my-7 lg:text-5xl lg:leading-normal"
+    >
+      Projects
+    </h1>
+    <ul class="my-3 grid grid-cols-1 lg:my-7">
+      {
+        repos.length === 0 ? (
+          <li class="transition-all">No repositories found.</li>
+        ) : (
+          repos.map((repo: unknown) => (
+            <li class="cursor-pointer border-2 border-black transition-all hover:bg-salmon">
+              <a
+                href={repo.html_url}
+                target="_blank"
+                class="flex h-full w-full flex-col items-center justify-center text-2xl lg:text-4xl"
+                rel="noopener noreferrer"
+              >
+                <p>{repo.name}</p>
+              </a>
+            </li>
+          ))
+        )
+      }
+    </ul>
+  </section>
+</Layout>
