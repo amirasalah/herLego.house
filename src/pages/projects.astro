@@ -30,7 +30,7 @@ try {
         repos.length === 0 ? (
           <li class="transition-all">No repositories found.</li>
         ) : (
-          repos.map((repo: unknown) => (
+          repos.map((repo: any) => (
             <li class="cursor-pointer border-2 border-black transition-all hover:bg-salmon">
               <a
                 href={repo.html_url}
