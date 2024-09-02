@@ -17,6 +17,8 @@ const { data: post } = await loadQuery<SanityDocument>({
   query: `*[_type == "blog" && slug.current == $slug][0]`,
   params
 });
+
+export const prerender = true;
 ---
 
 <Layout>

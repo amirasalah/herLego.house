@@ -11,6 +11,12 @@ export const prerender = true;
   <h2 class="text-3xl font-extrabold leading-10 text-accent lg:text-5xl">
     Reach <span class="text-4xl tracking-widest lg:text-6xl">OUT</span>!
   </h2>
+  <p id="formError" class="my-3 text-center text-xl font-bold text-red-500"></p>
+  <p
+    id="successMessage"
+    class="my-3 text-center text-xl font-bold text-green-500"
+  >
+  </p>
   <form method="POST" id="emailForm" class="my-5 grid">
     <input
       placeholder="Name"
@@ -46,6 +52,13 @@ export const prerender = true;
 
   init({ publicKey: "-LhOJHmCRayVEDvag" });
 
+  const formErrorElement = document.getElementById(
+    "formError"
+  ) as HTMLParagraphElement;
+  const successMessageElement = document.getElementById(
+    "successMessage"
+  ) as HTMLParagraphElement;
+
   document
     ?.getElementById("emailForm")
     ?.addEventListener("submit", async function (event) {
@@ -57,13 +70,22 @@ export const prerender = true;
 
         sendForm("service_k5pniae", "template_w1i7i68", form)
           .then((response) => {
-            console.log("SUCCESS!", response.status, response.text);
+            formErrorElement.textContent = "";
+            successMessageElement.textContent = "Message sent successfully!";
           })
           .catch((error) => {
-            console.error("Error:", error);
+            formErrorElement.textContent = error.message;
+            successMessageElement.textContent = "";
+          })
+          .finally(() => {
+            setTimeout(() => {
+              formErrorElement.textContent = "";
+              successMessageElement.textContent = "";
+              form.reset();
+            }, 5000);
           });
       } catch (error) {
-        console.error("Error:", (error as Error).message);
+        formErrorElement.textContent = "An unexpected error occurred.";
       }
     });
 </script>
