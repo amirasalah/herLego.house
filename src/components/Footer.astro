@@ -1,7 +1,3 @@
----
-import CityWeather from "./CityWeather.astro";
----
-
 <footer class="row-span-1 w-screen border-2 border-t-black py-3 text-sm">
   <section class="container mx-auto px-4">
     <section class="grid grid-cols-1 lg:grid-cols-2">
@@ -25,12 +21,6 @@ import CityWeather from "./CityWeather.astro";
         </ul>
         <p>© {new Date().getFullYear()}</p>
       </nav>
-      <section
-        class="flex flex-row items-center justify-center gap-2 text-xs lg:flex-col lg:items-end lg:text-sm"
-      >
-        <p>Designed and developed by Amira Salah</p>
-        <CityWeather />
-      </section>
     </section>
   </section>
 </footer>
