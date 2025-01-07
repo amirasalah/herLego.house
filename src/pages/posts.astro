@@ -1,41 +1,12 @@
 ---
-import type { SanityDocument } from "@sanity/client";
-import { sanityClient } from "sanity:client";
-
+import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 
-const posts = await sanityClient.fetch(`*[_type == "blog"]`);
-
-export const prerender = true;
+const allPosts = await getCollection("blog");
 ---
 
-<Layout>
-  <section class="grid h-full overflow-scroll">
-    <h1
-      class="my-3 text-4xl font-extrabold leading-tight text-accent underline lg:my-7 lg:text-5xl lg:leading-normal"
-    >
-      Latest thoughts💡
-    </h1>
-    <p class="my-3 lg:my-7">
-      <span>
-        This is a space for unfilted thoughts, ideas, and reflections. They're
-        mix of personal and professional. It's my way to express how i process
-        the 🌍 , articulate my thoughts and learn from them.
-      </span>
-    </p>
-    <ul class="my-3 grid grid-cols-1 lg:my-7 lg:grid-cols-3">
-      {
-        posts.map((post: SanityDocument) => (
-          <li class="cursor-pointer border-2 border-black transition-all hover:bg-salmon">
-            <a
-              class="flex h-full w-full items-center justify-center text-2xl lg:text-4xl"
-              href={`post/${post.slug.current}`}
-            >
-              <strong>{post.title}</strong>
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </section>
+<Layout title="Her thoughts">
+    <main>
+        {allPosts.map((post) => <a href={"/blog/" + post.slug}>{post.data.title}</a>)}
+    </main>
 </Layout>
