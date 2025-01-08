@@ -6,7 +6,25 @@ const allPosts = await getCollection("blog");
 ---
 
 <Layout title="Her thoughts">
-    <main>
-        {allPosts.map((post) => <a href={"/blog/" + post.slug}>{post.data.title}</a>)}
-    </main>
+  <section class="relative h-full w-full overflow-hidden">
+    <h1
+      class="my-2 text-4xl leading-tight text-black lg:my-7 lg:text-5xl lg:leading-normal"
+    >
+      Writings
+    </h1>
+    <ul class="my-3 grid grid-cols-1 lg:my-7">
+      {
+        allPosts.map((post) => (
+          <li class="cursor-pointer border-2 border-black transition-all hover:bg-salmon">
+            <a
+              class="flex h-full w-full flex-col items-center justify-center text-2xl lg:text-4xl"
+              href={"/blog/" + post.slug}
+            >
+              {post.data.title}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 </Layout>
